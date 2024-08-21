@@ -137,6 +137,11 @@ public class AutoShop {
     public boolean contains(Vehicle vehicle) {
 
         // TODO: COMPLETE THIS
+        for (Vehicle v : this.vehicles) {
+            if (v.equals(vehicle)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -190,6 +195,7 @@ public class AutoShop {
     public List<Vehicle> shallowCopy() {
 
         // TODO: COMPLETE THIS
-        return null;
+        List<Vehicle> deepcopyVehicles = new ArrayList<Vehicle>(this.vehicles);
+        return deepcopyVehicles ;
     }
 }
