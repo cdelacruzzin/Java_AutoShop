@@ -36,6 +36,8 @@ public class AutoShop {
      * @param owner the owner of this auto shop
      */
     public AutoShop(ShopOwner owner) {
+        this.owner = owner;
+        this.vehicles = (HashSet<Vehicle>) getVehicles();
 
         // TODO: COMPLETE THIS
     }
@@ -48,7 +50,8 @@ public class AutoShop {
      * @param other the auto shop to copy
      */
     public AutoShop(AutoShop other) {
-
+        this.owner = other.owner;
+        this.vehicles = other.vehicles;
         // TODO: COMPLETE THIS
     }
 
@@ -124,6 +127,7 @@ public class AutoShop {
     public boolean contains(Vehicle vehicle) {
 
         // TODO: COMPLETE THIS
+        return false;
     }
 
     /**
@@ -145,6 +149,7 @@ public class AutoShop {
     public Vehicle sellingSingleVehicle(ShopOwner user, Vehicle vehicle) {
 
         // TODO: COMPLETE THIS
+        return null;
     }
 
     /**
@@ -157,6 +162,7 @@ public class AutoShop {
     public List<Vehicle> deepCopy() {
 
         // TODO: COMPLETE THIS
+        return null;
     }
 
     /**
@@ -169,5 +175,6 @@ public class AutoShop {
     public List<Vehicle> shallowCopy() {
 
         // TODO: COMPLETE THIS
+        return null;
     }
 }
