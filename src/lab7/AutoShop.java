@@ -95,7 +95,11 @@ public class AutoShop {
      *                                  this auto shop
      */
     public void changeOwner(ShopOwner currentOwner, ShopOwner newOwner) {
-
+        if (this.owner.equals(currentOwner)) {
+            this.owner = newOwner;
+        } else {
+            throw new IllegalArgumentException("currentOwner is not the current owner of this auto shop");
+        }
         // TODO: COMPLETE THIS
     }
 
@@ -113,6 +117,12 @@ public class AutoShop {
      */
     public void add(List<Vehicle> vehicles) {
 
+        for (Vehicle v : vehicles) {
+            if (this.vehicles.contains(v)) {
+                throw new IllegalArgumentException();
+            }
+        }
+        this.vehicles.addAll(vehicles);
         // TODO: COMPLETE THIS
     }
 
