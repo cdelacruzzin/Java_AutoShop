@@ -37,7 +37,7 @@ public class AutoShop {
      */
     public AutoShop(ShopOwner owner) {
         this.owner = owner;
-        this.vehicles = (HashSet<Vehicle>) getVehicles();
+        this.vehicles = new HashSet<>();
 
         // TODO: COMPLETE THIS
     }
@@ -51,7 +51,7 @@ public class AutoShop {
      */
     public AutoShop(AutoShop other) {
         this.owner = other.owner;
-        this.vehicles = other.vehicles;
+        this.vehicles = new HashSet<>(other.vehicles);
         // TODO: COMPLETE THIS
     }
 
@@ -160,9 +160,14 @@ public class AutoShop {
      * @return a deep copy of the list of vehicles in this auto shop
      */
     public List<Vehicle> deepCopy() {
-
         // TODO: COMPLETE THIS
-        return null;
+        List<Vehicle> deepcopyVehicles = new ArrayList<>();
+
+       for (Vehicle copy : this.vehicles) {
+           deepcopyVehicles.add(new Vehicle(copy));
+       }
+       Collections.sort(deepcopyVehicles);
+        return deepcopyVehicles;
     }
 
     /**
