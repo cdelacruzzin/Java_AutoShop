@@ -164,6 +164,18 @@ public class AutoShop {
     public Vehicle sellingSingleVehicle(ShopOwner user, Vehicle vehicle) {
 
         // TODO: COMPLETE THIS
+
+
+        if (!this.owner.equals(user)) {
+            return null;
+        }
+
+        for (Vehicle v : this.vehicles) {
+            if (v.equals(vehicle)) {
+                return v;
+            }
+        }
+
         return null;
     }
 
@@ -195,7 +207,6 @@ public class AutoShop {
     public List<Vehicle> shallowCopy() {
 
         // TODO: COMPLETE THIS
-        List<Vehicle> deepcopyVehicles = new ArrayList<Vehicle>(this.vehicles);
-        return deepcopyVehicles ;
+        return new ArrayList<>(this.vehicles);
     }
 }
